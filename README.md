@@ -1,12 +1,12 @@
-# Occupancy Networks
+# Dynamic Occupancy Networks
 ![Example 1](img/00.gif)
 ![Example 2](img/01.gif)
 ![Example 3](img/02.gif)
 
-This repository contains the code to reproduce the results from the paper
-[Occupancy Networks - Learning 3D Reconstruction in Function Space](https://avg.is.tuebingen.mpg.de/publications/occupancy-networks).
+<!-- This repository contains the code to reproduce the results from the paper -->
+<!-- [Occupancy Networks - Learning 3D Reconstruction in Function Space](https://avg.is.tuebingen.mpg.de/publications/occupancy-networks). -->
 
-You can find detailed usage instructions for training your own models and using pretrained models below.
+<!-- You can find detailed usage instructions for training your own models and using pretrained models below.
 
 If you find our code or paper useful, please consider citing
 
@@ -15,7 +15,7 @@ If you find our code or paper useful, please consider citing
         author = {Mescheder, Lars and Oechsle, Michael and Niemeyer, Michael and Nowozin, Sebastian and Geiger, Andreas},
         booktitle = {Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
         year = {2019}
-    }
+    } -->
 
 ## Installation
 First you have to make sure that you have all dependencies in place.
