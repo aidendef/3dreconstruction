@@ -33,5 +33,5 @@ generation:
   n_x: 128
   n_z: 1
   resolution_0: 32 
-  upsampling_steps: 2
+  upsampling_steps: 2 ddddf
 
