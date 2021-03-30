@@ -1,0 +1,56 @@
+method: onet_IP_input
+data:
+  input_type: imagewithpointcloud #imagewithpointcloud #pointcloud
+  pointcloud_n: 300
+  pointcloud_noise: 0.005
+  points_subsample: 2048 
+  path: data/ShapeNet
+  img_folder: img_choy2016
+  img_size: 224 
+  img_with_camera: true
+  dim: 3
+model:
+  use_camera: true
+  encoder_latent: null
+  encoder_2_latent: null
+  decoder: hybrid_simple_local
+  decoder_kwargs:
+    sample_mode: bilinear # bilinear / nearest
+    hidden_size: 32
+    pos_encoding: True
+  encoder: hybrid_pointnet_local_pool
+  encoder_kwargs:
+    hidden_dim: 32
+    plane_resolution: 64
+    unet: True
+    unet_kwargs:
+      depth: 4
+      merge_mode: concat
+      start_filts: 32
+    n_channels: 7
+    pos_encoding: True
+  c_dim: 32
+  z_dim: 0
+  encoder_2: pixel2mesh_cond
+  ec_dim_2: 512 
+  c_dim_2: 963
+  z_dim_2: 0
+training:
+  out_dir:  out/img/onet_IP_input
+  batch_size: 64
+  model_selection_metric: iou
+  model_selection_mode: maximize
+  visualize_every: 10000
+  validate_every: 10000
+test:
+  threshold: 0.2
+  eval_mesh: true
+  eval_pointcloud: false
+generation:
+  batch_size: 100000
+  refine: false
+  n_x: 128
+  n_z: 1
+  resolution_0: 32 
+  upsampling_steps: 2
+

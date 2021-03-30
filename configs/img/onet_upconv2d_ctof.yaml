@@ -1,24 +1,21 @@
-method: onet_conv
+method: onet_upconv2d_ctof
 data:
   path: data/ShapeNet
   img_folder: img_choy2016
-  img_size: 256 
+  img_size: 224 
   points_subsample: 2048 
+  img_with_camera: true
 model:
+  use_camera: true
   encoder_latent: null
-  # decoder: cbatchnorm
-  decoder: simple_local      
-  decoder_kwargs:
-    sample_mode: bilinear # bilinear / nearest
-    hidden_size: 64
-  c_dim: 64
-  encoder: znet
+  decoder: cbatchnorm
+  encoder: pixel2mesh_cond
+  ec_dim: 512 
+  c_dim: 256 #1219 #2243 v_dim
   z_dim: 0
-  output_nc : 64
-  num_downs : 8
 training:
-  out_dir:  out/img/onet_conv_64
-  batch_size: 1
+  out_dir:  /home/hpclab/kyg/occupancy_networks/out/img/onet_upconv2d_ctof_alpa/ #out/img/test
+  batch_size: 56
   model_selection_metric: iou
   model_selection_mode: maximize
   visualize_every: 10000
@@ -33,5 +30,5 @@ generation:
   n_x: 128
   n_z: 1
   resolution_0: 32 
-  upsampling_steps: 2 ddddf
+  upsampling_steps: 2
 

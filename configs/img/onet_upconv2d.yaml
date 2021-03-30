@@ -1,0 +1,34 @@
+method: onet_upconv2d
+data:
+  path: data/ShapeNet
+  img_folder: img_choy2016
+  img_size: 224 
+  points_subsample: 2048 
+  img_with_camera: true
+model:
+  use_camera: true
+  encoder_latent: null
+  decoder: cbatchnorm
+  encoder: pixel2mesh_cond
+  ec_dim: 512 
+  c_dim: 1219 #2243 v_dim
+  z_dim: 0
+training:
+  out_dir:  /home/hpclab/kyg/occupancy_networks/out/img/onet_upconv2d_gl_colornoise(0.1)/ #out/img/test
+  batch_size: 56
+  model_selection_metric: iou
+  model_selection_mode: maximize
+  visualize_every: 10000
+  validate_every: 10000
+test:
+  threshold: 0.2
+  eval_mesh: true
+  eval_pointcloud: false
+generation:
+  batch_size: 100000
+  refine: false
+  n_x: 128
+  n_z: 1
+  resolution_0: 32 
+  upsampling_steps: 2
+
