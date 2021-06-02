@@ -1,7 +1,7 @@
 # Deep implicit function using progressive feature refinement for 3D reconstruction
-![Example 1](img/00.gif)
-![Example 2](img/01.gif)
-![Example 3](img/02.gif)
+![Example 1](img/result.pdf)
+<!-- ![Example 2](img/01.gif)
+![Example 3](img/02.gif) -->
 
 <!-- This repository contains the code to reproduce the results from the paper -->
 <!-- [Occupancy Networks - Learning 3D Reconstruction in Function Space](https://avg.is.tuebingen.mpg.de/publications/occupancy-networks). -->
