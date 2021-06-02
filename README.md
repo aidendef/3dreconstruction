@@ -1,5 +1,5 @@
 # Deep implicit function using progressive feature refinement for 3D reconstruction
-![Example 1](img/result.pdf)
+![Example 1](img/result.PNG)
 <!-- ![Example 2](img/01.gif)
 ![Example 3](img/02.gif) -->
 
